@@ -154,6 +154,24 @@ var Engine = (function(global) {
         });
 
         player.render();
+        // let initY = (5 * 83) - 32;
+        // ctx.drawImage(Resources.get('images/char-boy.png'), 0 * 101, initY);
+        // ctx.drawImage(Resources.get('images/char-boy.png'), 1 * 101, initY - 83);
+        // ctx.drawImage(Resources.get('images/char-boy.png'), 2 * 101, initY - (83 * 2));
+        // ctx.drawImage(Resources.get('images/char-boy.png'), 3 * 101, initY - (83 * 3));
+        // ctx.drawImage(Resources.get('images/char-boy.png'), 4 * 101, initY - (83 * 4));
+        // ctx.drawImage(Resources.get('images/char-boy.png'), 3 * 101, initY - (83 * 5));
+        // ctx.drawImage(Resources.get('images/char-boy.png'), 3 * 101, -32);
+
+        // let initYE = (5 * 83) - 25;
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 0 * 101, initYE);
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 0 * 101, initYE - 83);
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 0 * 101, initYE - 83 * 2);
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 1 * 101, initYE - 83);
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 2 * 101, initYE - (83 * 2));
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 3 * 101, initYE - (83 * 3));
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 4 * 101, initYE - (83 * 4));
+        // ctx.drawImage(Resources.get('images/enemy-bug.png'), 3 * 101, initYE - (83 * 5));
     }
 
     /* This function does nothing but it could have been a good place to
