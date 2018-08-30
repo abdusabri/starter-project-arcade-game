@@ -79,7 +79,39 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
+    }
+
+    function checkCollisions() {
+        allEnemies.forEach(function(enemy) {
+            let r1 = {
+                left: enemy.x,
+                right: (enemy.x + 101) - (101/3),
+                top: enemy.y,
+                bottom: (enemy.y + 83) - (83/3)
+            };
+
+            let r2 = {
+                left: player.x,
+                right: (player.x + 101) - (101/3),
+                top: player.y,
+                bottom: (player.y + 83) - (83/3)
+            };
+
+            if (intersectRect(r1, r2)) {
+                console.log('INT');
+                player = new Player();
+            } else {
+                //console.log('NO');
+            }
+        });
+    }
+
+    function intersectRect(r1, r2) {
+        return !(r2.left > r1.right || 
+            r2.right < r1.left || 
+            r2.top > r1.bottom ||
+            r2.bottom < r1.top);
     }
 
     /* This is called by the update function and loops through all of the
