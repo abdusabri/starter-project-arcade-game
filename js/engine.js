@@ -99,7 +99,7 @@ var Engine = (function(global) {
             };
 
             if (intersectRect(r1, r2)) {
-                console.log('INT');
+                console.log('Collision');
                 player = new Player();
             } else {
                 //console.log('NO');

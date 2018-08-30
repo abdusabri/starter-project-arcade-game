@@ -84,8 +84,9 @@ Player.prototype.handleInput = function(key) {
     switch (key) {
         case 'up':
             this.y -= 83;
-            if (this.y < this.minY) {
+            if (this.y <= this.minY) {
                 this.y = this.minY;
+                console.log('Game won');
             }
             break;
 
