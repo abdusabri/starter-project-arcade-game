@@ -20,6 +20,18 @@ var Enemy = function() {
     this.speedOptions = [0.5, 1, 1.5, 1.75]; //Slow, normal, fast, extra fast
     this.speedFactor = this.speedOptions[Math.floor(Math.random() * this.speedOptions.length)];
     this.normalSpeed = 202;
+
+    this.gameWonEvent; // The custom event that will be created
+
+    if (document.createEvent) {
+        this.gameWonEvent = document.createEvent("HTMLEvents");
+        this.gameWonEvent.initEvent("gameWon", true, true);
+    } else {
+        this.gameWonEvent = document.createEventObject();
+        this.gameWonEvent.eventType = "gameWon";
+    }
+
+    this.gameWonEvent.eventName = "gameWon";
 };
 
 // Update the enemy's position, required method for game
@@ -87,6 +99,16 @@ Player.prototype.handleInput = function(key) {
             if (this.y <= this.minY) {
                 this.y = this.minY;
                 console.log('Game won');
+                // if (document.createEvent) {
+                //     document.dispatchEvent(this.gameWonEvent);
+                // } else {
+                //     document.fireEvent("on" + this.gameWonEvent.eventType, this.gameWonEvent);
+                // }
+                // Create the event
+                var event = new CustomEvent("game-won");
+
+                // Dispatch/Trigger/Fire the event
+                document.dispatchEvent(event);
             }
             break;
 
