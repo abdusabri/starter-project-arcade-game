@@ -17,7 +17,7 @@ var Enemy = function() {
     // this.minY = -32;
     // this.minX = 0;
     // this.maxX = 4 * 101;
-    this.speedOptions = [0.5, 1, 1.5, 1.75]; //Slow, normal, fast, extra fast
+    this.speedOptions = [0.5, 1, 1.5, 1.75, 2]; //Slow, normal, fast, extra fast, super fast
     this.speedFactor = this.speedOptions[Math.floor(Math.random() * this.speedOptions.length)];
     this.normalSpeed = 202;
 
@@ -143,6 +143,7 @@ Player.prototype.handleInput = function(key) {
 // Place the player object in a variable called player
 window.player = new Player();
 window.allEnemies = [new Enemy(), 
+    new Enemy(),
     new Enemy(),
     new Enemy(),
     new Enemy()
